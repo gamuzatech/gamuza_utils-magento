@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Gamuza Utils - Basic features for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Utils at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<config>
+	  <tabs>
+		<gamuza translate="label" module="utils">
+            <label>Gamuza</label>
+            <sort_order>1000</sort_order>
+        </gamuza>
+	  </tabs>
+    <sections>
+        <utils translate="label" module="utils">
+            <label>Utils</label>
+            <tab>gamuza</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <about_us>
+                    <frontend_model>utils/about</frontend_model>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </about_us>
+            </groups>
+        </utils>
+        <carriers>
+            <groups>
+                <settings translate="utils" module="utils">
+					<label>Default Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>0</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>            
+                    <fields>
+                        <correios_logo translate="utils" module="utils">
+                            <label>Correios Logo</label>
+                            <frontend_type>image</frontend_type>
+                            <sort_order>1</sort_order>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">gamuza/carriers</upload_dir>
+                            <base_url type="media" scope_info="1">gamuza/carriers</base_url>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </correios_logo>
+                        <tracking translate="utils" module="utils">
+                            <label>Tracking URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tracking>
+                    </fields>
+                </settings>
+            </groups>
+        </carriers>
+    </sections>
+</config>

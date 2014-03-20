@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Gamuza Utils - Basic features for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Utils at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<config>
+  <modules>
+    <Gamuza_Utils>
+      <version>0.0.5</version>
+    </Gamuza_Utils>
+  </modules>
+  <global>
+    <helpers>
+      <utils>
+        <class>Gamuza_Utils_Helper</class>
+      </utils>
+    </helpers>
+	<blocks>
+	  <utils>
+		<class>Gamuza_Utils_Block</class>
+	  </utils>
+	  <adminhtml>
+	    <rewrite>
+                <page_header>Gamuza_Utils_Block_Adminhtml_Page_Header</page_header>
+                <page_footer>Gamuza_Utils_Block_Adminhtml_Page_Footer</page_footer>
+		<sales_order_view>Gamuza_Utils_Block_Adminhtml_Sales_Order_View</sales_order_view>
+	    </rewrite>
+	  </adminhtml>
+	    <page>
+		<rewrite>
+		    <html_head>Gamuza_Utils_Block_Page_Html_Head</html_head>
+		</rewrite>
+	    </page>
+	</blocks>
+	<models>
+	  <utils>
+		<class>Gamuza_Utils_Model</class>
+        <resourceModel>utils_mysql4</resourceModel>
+	  </utils>
+	  <utils_mysql4>
+		<class>Gamuza_Utils_Model_Mysql4</class>
+		<entities>
+		  <carriers>
+			<table>gamuza_carriers</table>
+		  </carriers>
+        </entities>
+	  </utils_mysql4>
+	</models>
+	<resources>
+	  <utils_setup>
+		<setup>
+		  <module>Gamuza_Utils</module>
+		  <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </utils_setup>
+	  <utils_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </utils_write>
+	  <utils_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </utils_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <utils>
+	    <use>admin</use>
+		<args>
+		  <module>Gamuza_Utils</module>
+		  <frontName>utils</frontName>
+		</args>
+	  </utils>
+	</routers>
+  </admin>
+    <frontend>
+        <translate>
+            <modules>
+                <Gamuza_Utils>
+                    <files>
+                        <default>Gamuza_Utils.csv</default>
+                    </files>
+                </Gamuza_Utils>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <utils>
+                    <file>utils.xml</file>
+                </utils>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Gamuza_Utils>
+                    <files>
+                        <default>Gamuza_Utils.csv</default>
+                    </files>
+                </Gamuza_Utils>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <utils>
+                    <file>utils.xml</file>
+                </utils>
+            </updates>
+        </layout>
+    </adminhtml>
+    <default>
+        <gamuza>
+            <utils_settings>
+                <site_url><![CDATA[http://www.gamuza.com.br/]]></site_url>
+                <forum_url><![CDATA[http://forum.gamuza.com.br/]]></forum_url>
+            </utils_settings>
+        </gamuza>
+        <carriers>
+            <settings>
+                <tracking><![CDATA[http://websro.correios.com.br/sro_bin/txect01$.QueryList?P_LINGUA=001&P_TIPO=001&P_COD_UNI=]]></tracking>
+            </settings>
+        </carriers>
+    </default>
+</config>
