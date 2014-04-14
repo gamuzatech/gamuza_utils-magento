@@ -34,6 +34,7 @@ extends Mage_Adminhtml_Block_System_Config_Form_Fieldset
         $logo = $this->getSkinUrl ('images/gamuza/utils/gamuza-magento-modules.png');
 
 $htmlBlock = <<<HTMLBLOCK
+<p>
 <table>
   <tr>
     <td width="50%" style="vertical-align:middle; text-align:justify;">
@@ -62,6 +63,7 @@ Aumente todo o potencial de suas vendas e de sua plataforma Magento com funciona
     </td>
   </tr>
 </table>
+</p>
 HTMLBLOCK;
 
         return $htmlBlock;
