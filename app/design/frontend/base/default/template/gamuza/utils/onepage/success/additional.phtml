@@ -1,0 +1,59 @@
+<!--
+/*
+ * Gamuza Utils - Basic features for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Utils at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<?php $_order = $this->getOrder (); ?>
+<div class="col2-set">
+    <div class="col-1">
+		<?php if($this->helper('giftmessage/message')->getIsMessagesAvailable('order', $_order) && $_order->getGiftMessageId()): ?>
+			<div class="order-additional order-gift-message">
+				<h2 class="sub-title"><?php echo $this->__('Gift Message for This Order') ?></h2>
+			</div>
+			<?php $_giftMessage=$this->helper('giftmessage/message')->getGiftMessageForEntity($_order); ?>
+			<dl class="gift-message">
+				<dt><strong><?php echo $this->__('From:') ?></strong> <?php echo $this->htmlEscape($_giftMessage->getSender()) ?></dt>
+				<dt><strong><?php echo $this->__('To:') ?></strong> <?php echo $this->htmlEscape($_giftMessage->getRecipient()) ?></dt>
+				<dd><?php echo $this->helper('giftmessage/message')->getEscapedGiftMessage($_order) ?></dd>
+			</dl>
+		<?php endif; ?>
+	</div>
+	<div class="col-2">
+		<?php $_history = $this->getOrder()->getVisibleStatusHistory() ?>
+		<?php if (count($_history)): ?>
+		<div class="order-additional order-comments">
+			<h2 class="sub-title"><?php echo $this->__('About Your Order') ?></h2>
+			<dl class="order-about">
+				<?php foreach ($_history as $_historyItem): ?>
+				    <dt><?php echo $this->formatDate($_historyItem->getCreatedAtStoreDate(), 'medium', true) ?></dt>
+				    <dd><?php echo $this->escapeHtml($_historyItem->getComment()) ?></dd>
+				<?php endforeach; ?>
+			</dl>
+		</div>
+		<?php endif; ?>
+	</div>
+</div>

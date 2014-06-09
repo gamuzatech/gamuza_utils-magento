@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Gamuza Utils - Basic features for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Utils at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="prependItem" ifconfig="utils/settings/use_jquery">
+                <type>skin_js</type>
+                <name>js/gamuza/utils/jquery-1.8.3.min.js</name>
+            </action>
+            <block type="core/text" name="gamuza.cdn.js.jquery.nonConflict">
+                <action method="setText" ifconfig="utils/settings/use_jquery_nonconflict">
+                    <text><![CDATA[<script type="text/javascript">var $j = jQuery.noConflict (true);</script>]]></text>
+                </action>
+            </block>
+        </reference>
+    </default>
+    <checkout_onepage_success translate="label">
+        <reference name="content">
+            <reference name="checkout.success">
+                <block type="utils/onepage_success_info" />
+		<block type="sales/order_items" name="order_items" template="sales/order/items.phtml">
+		    <action method="addItemRender"><type>default</type><block>sales/order_item_renderer_default</block><template>sales/order/items/renderer/default.phtml</template></action>
+		    <action method="addItemRender"><type>grouped</type><block>sales/order_item_renderer_grouped</block><template>sales/order/items/renderer/default.phtml</template></action>
+		    <block type="sales/order_totals" name="order_totals" template="sales/order/totals.phtml">
+		        <action method="setLabelProperties"><value>colspan="4" class="a-right"</value></action>
+		        <action method="setValueProperties"><value>class="last a-right"</value></action>
+		        <block type="tax/sales_order_tax" name="tax" template="tax/order/tax.phtml" />
+		    </block>
+		</block>
+		<block type="utils/onepage_success_additional" />
+            </reference>
+        </reference>
+    </checkout_onepage_success>
+</layout>

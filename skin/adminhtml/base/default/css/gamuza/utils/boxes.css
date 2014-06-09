@@ -1,4 +1,3 @@
-<?php
 /*
  * Gamuza Utils - Basic features for magento platform.
  * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
@@ -26,18 +25,14 @@
  * These files are distributed with Gamuza_Utils at http://code.google.com/p/gamuzaopen/.
  */
 
-class Gamuza_Utils_Block_Onepage_Success_Additional
-extends Mage_Core_Block_Template
-{
+.header { background:none !important; }
+.header-right { color:#333 !important; }
 
-protected function _construct ()
+.footer
 {
-    $this->setTemplate ('gamuza/utils/onepage/success/additional.phtml');
+background-color:#eee !important;
+background-image:none !important;
+margin-top:55px !important;
+padding-top:50px !important;
 }
 
-public function getOrder ()
-{
-    return Mage::registry ('current_order');
-}
-
-}

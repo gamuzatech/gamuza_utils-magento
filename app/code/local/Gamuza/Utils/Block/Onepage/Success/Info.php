@@ -34,7 +34,7 @@ protected function _construct ()
 {
     $this->_loadValidOrder ();
     
-    $this->setTemplate ('utils/onepage/success/info.phtml');
+    $this->setTemplate ('gamuza/utils/onepage/success/info.phtml');
 }
 
 public function _loadValidOrder ()

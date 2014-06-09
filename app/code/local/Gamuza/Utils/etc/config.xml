@@ -117,7 +117,7 @@
         <layout>
             <updates>
                 <utils>
-                    <file>utils.xml</file>
+                    <file>gamuza/utils.xml</file>
                 </utils>
             </updates>
         </layout>
@@ -135,7 +135,7 @@
         <layout>
             <updates>
                 <utils>
-                    <file>utils.xml</file>
+                    <file>gamuza/utils.xml</file>
                 </utils>
             </updates>
         </layout>

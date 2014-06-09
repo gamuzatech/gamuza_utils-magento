@@ -1,0 +1,117 @@
+<!--
+/*
+ * Gamuza Utils - Basic features for magento platform.
+ * Copyright (C) 2013 Gamuza Technologies (http://www.gamuza.com.br/)
+ * Author: Eneias Ramos de Melo <eneias@gamuza.com.br>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301, USA.
+ */
+
+/*
+ * See the AUTHORS file for a list of people on the Gamuza Team.
+ * See the ChangeLog files for a list of changes.
+ * These files are distributed with Gamuza_Utils at http://code.google.com/p/gamuzaopen/.
+ */
+-->
+
+<?php $_order = $this->getOrder (); ?>
+<dl class="order-info">
+	<dt><?php echo $this->helper ('utils')->__('About This Order:'); ?></dt>
+	<dd>
+		<ul id="order-info-tabs">
+			<li class="current first last"><?php echo $this->helper ('utils')->__('Order Information'); ?></li>
+		</ul>
+	</dd>
+</dl>
+<p class="order-date"><?php echo $this->__('Order Date: %s', $this->formatDate($_order->getCreatedAtStoreDate(), 'long')) ?></p>
+<?php if (!$_order->getIsVirtual()): ?>
+<div class="col2-set order-info-box">
+    <div class="col-1">
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Shipping Address') ?></h2>
+            </div>
+            <div class="box-content">
+                <address><?php echo $_order->getShippingAddress()->format('html') ?></address>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Shipping Method') ?><?php /* | <a href="#"><?php echo $this->__('Track Order') ?></a>*/ ?></h2>
+            </div>
+            <div class="box-content">
+                <?php if ($_order->getShippingDescription()): ?>
+                    <?php echo $_order->getShippingDescription() ?>
+                <?php else: ?>
+                    <p><?php echo $this->helper('sales')->__('No shipping information available'); ?></p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+<div class="col2-set order-info-box">
+    <div class="col-1">
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Billing Address') ?></h2>
+            </div>
+            <div class="box-content">
+                <address><?php echo $_order->getBillingAddress()->format('html') ?></address>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="box box-payment">
+            <div class="box-title">
+                <h2><?php echo $this->__('Payment Method') ?></h2>
+            </div>
+            <div class="box-content">
+                <?php echo $this->getPaymentInfoHtml() ?>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 class="table-caption"><?php echo $this->__('Items Ordered') ?></h2>
+<script type="text/javascript">
+//<![CDATA[
+function giftMessageToogle(giftMessageIdentifier)
+{
+    var link = $('order-item-gift-message-link-'+giftMessageIdentifier);
+    var container = $('order-item-gift-message-'+giftMessageIdentifier);
+    var row = $('order-item-row-'+giftMessageIdentifier);
+    if(link.expanded) {
+        link.expanded = false;
+        link.removeClassName('expanded');
+        if(container.hasClassName('last')) {
+            row.addClassName('last');
+        }
+        container.hide();
+    } else {
+        link.expanded = true;
+        link.addClassName('expanded');
+        if(container.hasClassName('last')) {
+            row.removeClassName('last');
+        }
+        container.show();
+    }
+
+    return false;
+}
+//]]>
+</script>
