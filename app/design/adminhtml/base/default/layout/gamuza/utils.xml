@@ -43,6 +43,15 @@
                 <type>skin_css</type>
                 <name>css/gamuza/utils/menu.css</name>
             </action>
+            <action method="addItem" ifconfig="utils/settings/use_jquery">
+                <type>skin_js</type>
+                <name>js/gamuza/utils/jquery-1.8.3.min.js</name>
+            </action>
+            <block type="core/text" name="com.gamuza.js.jquery.noconflict">
+                <action method="setText" ifconfig="utils/settings/use_jquery_noconflict">
+                    <text><![CDATA[<script type="text/javascript">var $j = jQuery.noConflict (false);</script>]]></text>
+                </action>
+            </block>
         </reference>
     </default>
 </layout>

@@ -22,6 +22,5 @@
 "Item was successfully deleted","Item foi excluído com sucesso."
 "Default Settings","Ajustes Padrão"
 "Tracking URL","URL para Rastreio"
-Use jQuery library,Usar biblioteca jQuery
-Use jQuery nonConflict,Usar nonConflict do jQuery
-Use jQuery nonConflict method,Usar método nonConflict do jQuery
+"Use jQuery library","Usar biblioteca jQuery"
+"Use jQuery noConflict method","Usar método noConflict do jQuery"
