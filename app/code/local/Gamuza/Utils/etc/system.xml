@@ -79,6 +79,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>Use jQuery noConflict method</comment>
+                            <depends><use_jquery>1</use_jquery></depends>
                         </use_jquery_noconflict>
                     </fields>
                 </settings>
