@@ -104,5 +104,15 @@ extends Mage_Core_Model_Abstract
 
         return count ($collection) ? $collection->getFirstItem ()->getValue () : NULL;
     }
+    
+    function getTableName ($alias)
+    {
+        return $this->getCoreResource ()->getTableName ($alias);
+    }
+    
+    function getCoreResource ()
+    {
+        return Mage::getSingleton ('core/resource');
+    }
 }
 
