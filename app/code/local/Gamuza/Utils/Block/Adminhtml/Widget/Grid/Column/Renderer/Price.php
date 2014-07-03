@@ -31,6 +31,6 @@ extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Price
 {
     protected function _getCurrencyCode($row)
     {
-        return Mage::app()->getLocale()->currency (Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
+        return Mage::app()->getStore()->getBaseCurrencyCode();
     }
 }
