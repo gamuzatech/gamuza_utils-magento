@@ -42,7 +42,7 @@
             </block>
         </reference>
     </default>
-    <checkout_onepage_success translate="label">
+    <gamuza_checkout_handle translate="label">
         <reference name="content">
             <reference name="checkout.success">
                 <block type="utils/onepage_success_info" />
@@ -58,5 +58,12 @@
 		<block type="utils/onepage_success_additional" />
             </reference>
         </reference>
+    </gamuza_checkout_handle>
+    <checkout_onepage_success translate="label">
+        <update handle="gamuza_checkout_handle"/>
     </checkout_onepage_success>
+    <onestepcheckout_index_success translate="label">
+        <update handle="gamuza_checkout_handle"/>
+    </onestepcheckout_index_success>
 </layout>
+
