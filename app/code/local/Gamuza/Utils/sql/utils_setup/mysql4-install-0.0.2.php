@@ -29,7 +29,7 @@
 $installer = $this;
 $installer->startSetup();
 $sqlBlock = <<<SQLBLOCK
-CREATE TABLE gamuza_carriers
+CREATE TABLE IF NOT EXISTS {$this->getTable('gamuza_carriers')}
 (
     id int(11) unsigned NOT NULL AUTO_INCREMENT,
     name char(255) CHARACTER SET utf8 NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE gamuza_carriers
     UNIQUE KEY name (name),
     KEY description (description)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=7;
-INSERT INTO gamuza_carriers (id, name, description) VALUES
+INSERT INTO {$this->getTable('gamuza_carriers')} (id, name, description) VALUES
 (1, 'sedex', 'Transportadora Sedex'),
 (2, 'esedex', 'Transportadora e-Sedex'),
 (3, 'pac', 'Transportadora PAC'),

@@ -29,7 +29,7 @@
 $installer = $this;
 $installer->startSetup();
 $sqlBlock = <<<SQLBLOCK
-CREATE TABLE {$this->getTable('gamuza_carriers')}
+CREATE TABLE IF NOT EXISTS {$this->getTable('gamuza_carriers')}
 (
     id int(11) unsigned NOT NULL AUTO_INCREMENT,
     name char(255) CHARACTER SET utf8 NOT NULL,
