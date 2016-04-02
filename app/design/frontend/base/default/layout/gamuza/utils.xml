@@ -40,6 +40,42 @@
                     <text><![CDATA[<script type="text/javascript">var $j = jQuery.noConflict (false);</script>]]></text>
                 </action>
             </block>
+            <action method="appendItem" ifconfig="utils/settings/use_bootstrap">
+                <type>skin_css</type>
+                <name>css/gamuza/utils/bootstrap-3.3.4.min.css</name>
+            </action>
+            <!--
+            <action method="appendItem" ifconfig="utils/settings/use_bootstrap">
+                <type>skin_css</type>
+                <name>css/gamuza/utils/bootstrap-3.3.4.css.map</name>
+            </action>
+            -->
+            <action method="appendItem" ifconfig="utils/settings/use_bootstrap_theme">
+                <type>skin_css</type>
+                <name>css/gamuza/utils/bootstrap-theme-3.3.4.min.css</name>
+            </action>
+            <!--
+            <action method="appendItem" ifconfig="utils/settings/use_bootstrap_theme">
+                <type>skin_css</type>
+                <name>css/gamuza/utils/bootstrap-theme-3.3.4.css.map</name>
+            </action>
+            -->
+            <action method="appendItem" ifconfig="utils/settings/use_bootstrap">
+                <type>skin_js</type>
+                <name>js/gamuza/utils/bootstrap-3.3.4.min.js</name>
+            </action>
+            <action method="appendItem" ifconfig="utils/settings/use_bootstrap">
+                <type>skin_js</type>
+                <name>js/gamuza/utils/bootstrap-tab.js</name>
+            </action>
+            <action method="appendItem" ifconfig="utils/settings/use_lazyload">
+                <type>skin_js</type>
+                <name>js/gamuza/utils/jquery.lazyload-1.9.3.min.js</name>
+            </action>
+            <action method="appendItem" ifconfig="utils/settings/use_lazyload">
+                <type>skin_js</type>
+                <name>js/gamuza/utils/jquery.scrollstop-1.9.3.min.js</name>
+            </action>
         </reference>
     </default>
     <gamuza_checkout_handle translate="label">

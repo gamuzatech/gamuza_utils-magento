@@ -145,12 +145,21 @@
             <utils_settings>
                 <site_url><![CDATA[http://www.gamuza.com.br/]]></site_url>
                 <forum_url><![CDATA[http://forum.gamuza.com.br/]]></forum_url>
+                <legal_url><![CDATA[http://www.gamuza.com.br/legal/]]></legal_url>
+                <legal_sla_url><![CDATA[http://www.gamuza.com.br/legal/sla/]]></legal_sla_url>
+                <legal_terms_url><![CDATA[http://www.gamuza.com.br/legal/tems/]]></legal_terms_url>
+                <legal_privacy_url><![CDATA[http://www.gamuza.com.br/legal/privacy/]]></legal_privacy_url>
+                <legal_trademark_url><![CDATA[http://www.gamuza.com.br/legal/trademark/]]></legal_trademark_url>
+                <legal_contacts_url><![CDATA[http://www.gamuza.com.br/legal/contacts/]]></legal_contacts_url>
             </utils_settings>
         </gamuza>
         <utils>
             <settings>
                 <use_jquery>0</use_jquery>
                 <use_jquery_nonconflict>0</use_jquery_nonconflict>
+                <use_bootstrap>0</use_bootstrap>
+                <use_bootstrap_theme>0</use_bootstrap_theme>
+                <use_lazyload>0</use_lazyload>
             </settings>
         </utils>
         <carriers>
@@ -160,3 +169,4 @@
         </carriers>
     </default>
 </config>
+

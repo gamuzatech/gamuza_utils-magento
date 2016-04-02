@@ -88,7 +88,7 @@ extends Mage_Core_Model_Abstract
 	return $collection->getFirstItem ();
     }
     
-    public function toOptions (Mage_Core_Model_Mysql4_Collection_Abstract $collection, array $fields)
+    public function toOptions (/* Mage_Core_Model_Mysql4_Collection_Abstract */ $collection, array $fields)
     {
 	return Mage::helper ('utils')->toOptions ($collection, $fields);
     }
@@ -113,6 +113,13 @@ extends Mage_Core_Model_Abstract
     function getCoreResource ()
     {
         return Mage::getSingleton ('core/resource');
+    }
+
+    public function getSessionQuote ()
+    {
+        $model_name = Mage::app ()->getStore ()->isAdmin () ? 'adminhtml/session_quote' : 'checkout/session';
+        
+        return Mage::getSingleton ($model_name)->getQuote();
     }
 }
 

@@ -34,6 +34,7 @@
       <active>true</active>
       <codePool>local</codePool>
       <version>0.0.5</version>
+      <!--
       <depends>
           <Mage_Adminhtml />
           <Mage_Catalog />
@@ -44,6 +45,8 @@
           <Mage_Sales />
           <Mage_Shipping />
       </depends>
+      -->
     </Gamuza_Utils>
   </modules>
 </config>
+

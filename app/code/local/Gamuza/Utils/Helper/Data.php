@@ -39,7 +39,7 @@ extends Mage_Core_Helper_Abstract
 	    return Mage::app()->getLocale()->currency (Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
 	}
 
-	public function toOptions (Mage_Core_Model_Mysql4_Collection_Abstract $collection, array $fields)
+	public function toOptions (/* Mage_Core_Model_Mysql4_Collection_Abstract */ $collection, array $fields)
 	{
 	    $key = key ($fields);
 	    $value = $fields [$key];
@@ -47,8 +47,10 @@ extends Mage_Core_Helper_Abstract
 	    $data = $collection->toArray (array ($key, $value));
 	    
 	    $result = '';
-	    foreach ($data ['items'] as $item) $result [$item [$key]] = $item [$value];
+        $search = array_key_exists ('items', $data) ? $data ['items'] : $data;
+	    foreach ($search as $item) $result [$item [$key]] = $item [$value];
 	    
 	    return $result;
 	}
 }
+
