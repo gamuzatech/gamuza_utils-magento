@@ -51,6 +51,11 @@
 		<sales_order_view>Gamuza_Utils_Block_Adminhtml_Sales_Order_View</sales_order_view>
 	    </rewrite>
 	  </adminhtml>
+        <checkout>
+            <rewrite>
+                <onepage_success>Gamuza_Utils_Block_Onepage_Success</onepage_success>
+            </rewrite>
+        </checkout>
 	    <page>
 		<rewrite>
 		    <html_head>Gamuza_Utils_Block_Page_Html_Head</html_head>
