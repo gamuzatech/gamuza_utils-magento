@@ -30,6 +30,19 @@ class Gamuza_Utils_Block_Page_Html_Head
 extends Mage_Page_Block_Html_Head
 {
     /**
+     * Set title element text
+     *
+     * @param string $title
+     * @return Mage_Page_Block_Html_Head
+     */
+    public function setTitle($title)
+    {
+        $this->_data['title'] = Mage::getStoreConfig('design/head/title_prefix') . ' ' . __($title)
+            . ' ' . Mage::getStoreConfig('design/head/title_suffix');
+        return $this;
+    }
+
+    /**
      * Add HEAD Item 'BEFORE'
      *
      * Allowed types:
