@@ -28,7 +28,7 @@ E mais:
 
     $ cd /path/to/magento
     $ modgit init
-    $ modgit add gamuza_utils https://github.com/gamuzabrasil/gamuza_utils-magento.git
+    $ modgit add gamuza_utils https://github.com/gamuzatech/gamuza_utils-magento.git
 
 **Instalação manual dos arquivos**
 
