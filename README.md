@@ -8,7 +8,6 @@ servindo como a base para a maioria dos módulos Magento disponibilizados pela G
 Inclui:
 
 - Bootstrap
-- jQuery
 - Scrolltop
 - Lazyload
 
