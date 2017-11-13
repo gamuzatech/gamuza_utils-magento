@@ -48,7 +48,6 @@
 	    <rewrite>
                 <page_header>Gamuza_Utils_Block_Adminhtml_Page_Header</page_header>
                 <page_footer>Gamuza_Utils_Block_Adminhtml_Page_Footer</page_footer>
-		<sales_order_view>Gamuza_Utils_Block_Adminhtml_Sales_Order_View</sales_order_view>
 	    </rewrite>
 	  </adminhtml>
         <checkout>

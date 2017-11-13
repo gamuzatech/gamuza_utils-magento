@@ -22,8 +22,9 @@
 "Item was successfully deleted","Item foi excluído com sucesso."
 "Default Settings","Ajustes Padrão"
 "Tracking URL","URL para Rastreio"
-Use Bootstrap library,Usar biblioteca Bootstrap
-Use Bootstrap theme,Usar tema Bootstrap
+"Use Bootstrap library","Usar biblioteca Bootstrap"
+"Use Bootstrap theme","Usar tema Bootstrap"
 "Use jQuery library","Usar biblioteca jQuery"
 "Use jQuery noConflict method","Usar método noConflict do jQuery"
-Use Lazy Load,Usar Lazy Load
+"Use Lazy Load","Usar Lazy Load"
+
