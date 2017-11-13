@@ -159,8 +159,6 @@
         </gamuza>
         <utils>
             <settings>
-                <use_jquery>0</use_jquery>
-                <use_jquery_nonconflict>0</use_jquery_nonconflict>
                 <use_bootstrap>0</use_bootstrap>
                 <use_bootstrap_theme>0</use_bootstrap_theme>
                 <use_lazyload>0</use_lazyload>
