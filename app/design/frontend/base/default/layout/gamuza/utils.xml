@@ -33,27 +33,15 @@
         <reference name="head">
             <action method="appendItem" ifconfig="utils/settings/use_bootstrap">
                 <type>skin_css</type>
-                <name>css/gamuza/utils/bootstrap-3.3.4.min.css</name>
+                <name>css/gamuza/utils/bootstrap-3.3.7.min.css</name>
             </action>
-            <!--
-            <action method="appendItem" ifconfig="utils/settings/use_bootstrap">
-                <type>skin_css</type>
-                <name>css/gamuza/utils/bootstrap-3.3.4.css.map</name>
-            </action>
-            -->
             <action method="appendItem" ifconfig="utils/settings/use_bootstrap_theme">
                 <type>skin_css</type>
-                <name>css/gamuza/utils/bootstrap-theme-3.3.4.min.css</name>
+                <name>css/gamuza/utils/bootstrap-theme-3.3.7.min.css</name>
             </action>
-            <!--
-            <action method="appendItem" ifconfig="utils/settings/use_bootstrap_theme">
-                <type>skin_css</type>
-                <name>css/gamuza/utils/bootstrap-theme-3.3.4.css.map</name>
-            </action>
-            -->
             <action method="appendItem" ifconfig="utils/settings/use_bootstrap">
                 <type>skin_js</type>
-                <name>js/gamuza/utils/bootstrap-3.3.4.min.js</name>
+                <name>js/gamuza/utils/bootstrap-3.3.7.min.js</name>
             </action>
             <action method="appendItem" ifconfig="utils/settings/use_bootstrap">
                 <type>skin_js</type>
