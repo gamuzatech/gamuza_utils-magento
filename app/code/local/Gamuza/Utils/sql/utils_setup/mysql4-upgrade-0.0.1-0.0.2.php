@@ -44,7 +44,8 @@ INSERT INTO {$this->getTable('gamuza_carriers')} (id, name, description) VALUES
 (3, 'pac', 'Transportadora PAC'),
 (4, 'expressdelivery', 'Transportadora Entrega Expressa'),
 (5, 'plus', 'Transportadora Plus'),
-(6, 'retire', 'Cliente Retira na Loja');
+(6, 'motoboy', 'Motoboy'),
+(7, 'retire', 'Cliente Retira na Loja');
 SQLBLOCK;
 $installer->run($sqlBlock);
 //demo
